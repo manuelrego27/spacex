@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ Copyright (C) 2019 The Android Open Source Project
+~
+~ Licensed under the Apache License, Version 2.0 (the "License");
+~ you may not use this file except in compliance with the License.
+~ You may obtain a copy of the License at
+~
+~      http://www.apache.org/licenses/LICENSE-2.0
+~
+~ Unless required by applicable law or agreed to in writing, software
+~ distributed under the License is distributed on an "AS IS" BASIS,
+~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~ See the License for the specific language governing permissions and
+~ limitations under the License.
+-->
+
+<resources>
+    <!-- MATERIAL BASE COLORS -->
+    <attr name="primaryColor" format="color" />
+    <attr name="primaryLightColor" format="color" />
+    <attr name="primaryDarkColor" format="color" />
+    <attr name="secondaryColor" format="color" />
+    <attr name="secondaryLightColor" format="color" />
+    <attr name="secondaryDarkColor" format="color" />
+    <attr name="primaryTransparentColor" format="color" />
+    <attr name="secondaryTransparentColor" format="color" />
+    <attr name="greenTransparentColor" format="color" />
+
+    <attr name="collapsingToolbarColor" format="color" />
+    <attr name="statusBarColor" format="color" />
+    <attr name="navigationBarColor" format="color" />
+    <attr name="splashScreenBackgroundColor" format="color" />
+
+    <!-- TEXT COLORS -->
+    <attr name="primaryTextColor" format="color" />
+    <attr name="secondaryTextColor" format="color" />
+    <attr name="disabledTextColor" format="color" />
+    <attr name="shadowTextColor" format="color" />
+    <attr name="tabTextColor" format="color" />
+    <attr name="buttonTextColor" format="color" />
+
+    <!-- AUX COLORS -->
+    <attr name="dividerColor" format="color" />
+    <attr name="mainBackgroundColor" format="color" />
+    <attr name="greyBackgroundColor" format="color" />
+    <attr name="transparentBlackColor" format="color" />
+    <attr name="transparentGreyColor" format="color" />
+    <attr name="errorColor" format="color" />
+
+    <attr name="whiteColor" format="color" />
+    <attr name="greenColor" format="color" />
+    <attr name="blueColor" format="color" />
+    <attr name="greyColor" format="color" />
+</resources>

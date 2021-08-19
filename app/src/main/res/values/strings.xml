@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SpaceX</string>
+    <string name="action_filter">Filter</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="launch_fragment_label">SpaceX</string>
+    <string name="loading">Loading…</string>
+    <string name="rocket_string">%1$s / %2$s</string>
+    <string name="mission">Mission:</string>
+    <string name="date_time">Date/time:</string>
+    <string name="rocket">Rocket:</string>
+    <string name="days_since_now">Days since now:</string>
+    <string name="days_from_now">Days from now:</string>
+    <string name="company">COMPANY</string>
+    <string name="years">Years</string>
+    <string name="success">Success</string>
+    <string name="sort">Sort</string>
+    <string name="all">All</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="asc">Asc</string>
+    <string name="desc">Desc</string>
+    <string name="close">Close</string>
+    <string name="launches">LAUNCHES</string>
+    <string name="open_article">Open Article</string>
+    <string name="open_wikipedia">Open Wikipedia</string>
+    <string name="watch_video">Watch Video</string>
+
+</resources>

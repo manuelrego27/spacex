@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="launch"
+            type="com.spacex.data.entities.Launch" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/mission_badge"
+            android:layout_width="@dimen/icon_normal"
+            android:layout_height="@dimen/icon_normal"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:scaleType="centerInside"
+            app:imageUrl="@{launch.links.mission_patch}"
+            app:layout_constraintBottom_toBottomOf="@+id/mission_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mission_name"
+            tools:src="@drawable/ic_icon" />
+
+        <ImageView
+            android:id="@+id/mission_status"
+            android:layout_width="@dimen/icon_normal"
+            android:layout_height="@dimen/icon_normal"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            android:scaleType="centerInside"
+            android:visibility="@{launch.upcoming ? View.GONE : View.VISIBLE}"
+            tools:src="@drawable/check_green_48dp"
+            android:src="@{launch.launch_success == true ? @drawable/check_green_48dp : @drawable/canceled_red_48dp}"
+            app:layout_constraintBottom_toBottomOf="@+id/mission_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mission_name" />
+
+        <TextView
+            android:id="@+id/mission_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacingMedium"
+            android:layout_marginBottom="@dimen/spacingSmall"
+            android:text="@string/mission"
+            app:layout_constraintBottom_toTopOf="@id/mission_date"
+            app:layout_constraintStart_toEndOf="@+id/mission_badge"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/mission_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacingSmall"
+            android:text="@string/date_time"
+            app:layout_constraintBottom_toTopOf="@+id/mission_rocket"
+            app:layout_constraintStart_toStartOf="@+id/mission_name"
+            app:layout_constraintTop_toBottomOf="@+id/mission_name" />
+
+        <TextView
+            android:id="@+id/mission_rocket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacingSmall"
+            android:text="@string/rocket"
+            app:layout_constraintBottom_toTopOf="@+id/mission_days"
+            app:layout_constraintStart_toStartOf="@+id/mission_name"
+            app:layout_constraintTop_toBottomOf="@+id/mission_date" />
+
+        <TextView
+            android:id="@+id/mission_days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/days_from_now"
+            android:text="@{launch.upcoming ? @string/days_from_now : @string/days_since_now}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/mission_name"
+            app:layout_constraintTop_toBottomOf="@+id/mission_rocket" />
+
+        <TextView
+            android:id="@+id/name_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            android:text="@{launch.mission_name}"
+            app:layout_constraintBottom_toBottomOf="@id/mission_name"
+            app:layout_constraintEnd_toStartOf="@+id/mission_status"
+            app:layout_constraintStart_toStartOf="@+id/days_details"
+            app:layout_constraintTop_toTopOf="@id/mission_name"
+            tools:text="Trailblazer" />
+
+        <TextView
+            android:id="@+id/date_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{launch.timeString}"
+            tools:text="2008-08-02T03:34:00.000Z"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            app:layout_constraintEnd_toStartOf="@+id/mission_status"
+            app:layout_constraintBottom_toBottomOf="@+id/mission_date"
+            app:layout_constraintStart_toStartOf="@+id/days_details"
+            app:layout_constraintTop_toTopOf="@+id/mission_date" />
+
+        <TextView
+            android:id="@+id/rocket_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Falcon 1 / Merlin C"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            android:text="@{@string/rocket_string(launch.rocket.rocket_name, launch.rocket.rocket_type)}"
+            app:layout_constraintBottom_toTopOf="@+id/mission_rocket"
+            app:layout_constraintEnd_toStartOf="@+id/mission_status"
+            app:layout_constraintStart_toStartOf="@+id/days_details"
+            app:layout_constraintTop_toBottomOf="@+id/mission_rocket"/>
+
+        <TextView
+            android:id="@+id/days_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{launch.diffInDays}"
+            android:layout_marginStart="@dimen/spacingSmall"
+            android:layout_marginEnd="@dimen/spacingMedium"
+            tools:text="50"
+            app:layout_constraintBottom_toBottomOf="@+id/mission_days"
+            app:layout_constraintStart_toEndOf="@+id/mission_days"
+            app:layout_constraintEnd_toStartOf="@+id/mission_status"
+            app:layout_constraintTop_toTopOf="@+id/mission_days" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?attr/dividerColor"
+            android:id="@+id/view"
+            android:layout_marginTop="@dimen/spacingMedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mission_days" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacingMedium">
+
+        <TextView
+            android:id="@+id/years"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/years"
+            app:layout_constraintBottom_toTopOf="@id/edit_years"
+            app:layout_constraintEnd_toEndOf="@+id/success"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/success"
+            app:layout_constraintBottom_toBottomOf="@id/success_options"
+            app:layout_constraintEnd_toEndOf="@+id/sort"
+            app:layout_constraintTop_toTopOf="@id/success_options" />
+
+        <TextView
+            android:id="@+id/sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort"
+            app:layout_constraintBottom_toBottomOf="@id/sort_options"
+            app:layout_constraintEnd_toStartOf="@+id/sort_options"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sort_options" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/edit_years"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/success_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingMedium"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_years">
+
+            <RadioButton
+                android:id="@+id/success_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/all" />
+
+            <RadioButton
+                android:id="@+id/success_win"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/success_lose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/sort_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingMedium"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/success_options"
+            app:layout_constraintTop_toBottomOf="@id/success_options">
+
+            <RadioButton
+                android:id="@+id/asc_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/asc" />
+
+            <RadioButton
+                android:id="@+id/desc_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/desc" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/action_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacingLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sort_options"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="@string/close"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
